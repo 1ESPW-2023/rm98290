@@ -37,20 +37,68 @@
 
 let tmp = 0
 
-function mudacor() {
-    let r = Math.ceil(Math.random()*255);
-    let g = Math.ceil(Math.random()*255);
-    let b = Math.ceil(Math.random()*255);
-
-    const elemento = [...document.getElementsByClassName("conteudo")];
-    elemento.forEach( (el)=>{
-        el.style.backgroundColor = `rgb(${r},${g},${b})`;
-    } )
-    tmp = setTimeout(mudacor, 5000)
+function mudarimg1() {               
+           
+    // let nr = Math.round(Math.random()*3);
+    const img1 = document.querySelector(".l-d img");
+    const img2 = document.querySelector(".l-e img");
+    img1.src = "./img/banner-lateral-1.png";
+    img2.src = "./img/banner-lateral-3.png";
+    
+    setTimeout(mudarimg2, 1000);
 }
 
-function pararTimeOut() {
-    clearTimeout(tmp);
+function mudarimg2() {                      
+    // let nr = Math.round(Math.random()*3);
+    const img1 = document.querySelector(".l-d img");
+    const img2 = document.querySelector(".l-e img");
+
+    img1.src = "./img/banner-lateral-2.png";
+    img2.src = "./img/banner-lateral-1.png";
+    
+    setTimeout(mudarimg3, 1000);
 }
 
-mudacor()
+function mudarimg3() {                      
+    // let nr = Math.round(Math.random()*3);
+    const img1 = document.querySelector(".l-d img");
+    const img2 = document.querySelector(".l-e img");
+
+    img1.src = "./img/banner-lateral-3.png";
+    img2.src = "./img/banner-lateral-2.png";
+    
+    setTimeout(mudarimg1, 1000);
+}
+
+// modo para nao adicionar a funcao onclick no html
+const btnluzoff = document.querySelector(".conteudo button");
+
+btnluzoff.addEventListener("click", ()=>{
+    const luzoff = document.querySelector(".conteudo > div > img");
+
+    if(btnluzoff.textContent == "LIGAR"){
+        btnluzoff.textContent = "DESLIGAR";
+        luzoff.src= "./img/pic_bulbon.gif";
+    }else{
+        btnluzoff.textContent = "LIGAR";
+        luzoff.src= "./img/pic_bulboff.gif";
+    }
+
+});
+
+
+
+
+
+// function mudacor() {
+//     let r = Math.ceil(Math.random()*255);
+//     let g = Math.ceil(Math.random()*255);
+//     let b = Math.ceil(Math.random()*255);
+
+//     const elemento = [...document.getElementsByClassName("conteudo")];
+//     elemento.forEach( (el)=>{
+//         el.style.backgroundColor = `rgb(${r},${g},${b})`;
+//     } )
+//     tmp = setTimeout(mudacor, 500)
+// }
+
