@@ -19,6 +19,10 @@ inputUser.addEventListener("keyup", ()=>{
     }
 });
 
+//SUBINDO A RÉGUA
+//Agora repita o processo e altere a classe do ícone para outra
+//Fazendo com que o olho se feche ou apareça com uma cancela quando clicado e vice-versa.
+
 const eyePass = document.querySelector(".eye");
 
 eyePass.addEventListener("click", ()=>{
@@ -31,4 +35,5 @@ eyePass.addEventListener("click", ()=>{
         inputPass.setAttribute("type","password");
         eyePass.setAttribute("class","fa fa-eye-slash eye");
     }
+
 });

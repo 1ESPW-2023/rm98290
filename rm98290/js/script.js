@@ -1,104 +1,134 @@
-// const divelement = document.getElementById("div-box")
+// //Exemplo de Funções
+// const divElement = document.getElementById("div-box")
 
-// divelement.addEventListener("click", ()=>{
-//     console.error(divelement);
-// })
+// // divElement.addEventListener("click", ()=>{
+// //     console.log(divElement);
+// // });
 
-// divelement.addEventListener("click", SeuPai);
+// divElement.addEventListener("click", mostraElemento);
 
-// function mostraelementos() {
-//     console.log(divelement)
+
+// function mostraElemento() {
+//     console.log(divElement)
 // }
 
-// function SeuPai() {
-//     let SeuPai = "Seu Pai e Rosa"
-//     console.log(SeuPai)
+// function soma() {
+//     let n1 = 10
+//     let n2 = 5
+//     console.log(n1 + n2)
 // }
+ 
 
+// //Recuperando elementos do HTML com querySelector
+// const liElements = document.querySelector("#item");
+// console.log(liElements);
+// const eyeButton = document.querySelector(".eye");
 
-// convertendo node list em array spread
-// const arrayelements = [...document.querySelectorAll("li")];
-// arrayelements.map((el,key)=>{
-    
-//     if (el.textContent == "Item-24") {
-//         el.textContent = `${key+1}[ Item-24 ]`;
+// eyeButton.addEventListener("click",()=>{
+
+//     const inputSenha = document  .querySelector("#idPass");
+
+//     if(inputSenha.getAttribute("type") == "password"){
+//         inputSenha.setAttribute("type","text");
+//         eyeButton.setAttribute("class","fa fa-eye-slash eye");
+//     }else{
+//         inputSenha.setAttribute("type","password");
+//         eyeButton.setAttribute("class","fa fa-eye eye");
 //     }
+// });
 
-// })
 
+// //Recuperando elementos do HTML com querySelectorAll
+// const liElements = document.querySelectorAll("li");
+// //CONVERTENDO NODE LIST EM ARRAY COM SPREAD
+// const arrayElements = [...liElements];
+// console.log(arrayElements);
 
-// arrayelements.map((el,key)=>{
-    
-//     if (el.textContent.indexOf("1") != -1) {
-//         el.textContent = `[ ${el.textContent}]`;
+//CONVERTENDO NODE LIST EM ARRAY COM SPREAD
+// const arrayElements = [...document.querySelectorAll("li")];
+
+// arrayElements.map((el,key)=>{
+
+//     if (el.textContent.indexOf("1") != (-1)) {
+//         el.textContent = `[ ${el.textContent} ]`;
 //     }
+// });
+let tmp = 0;
 
-// })
-
-let tmp = 0
-
-function mudarimg1() {               
-           
-    // let nr = Math.round(Math.random()*3);
-    const img1 = document.querySelector(".l-d img");
-    const img2 = document.querySelector(".l-e img");
-    img1.src = "./img/banner-lateral-1.png";
-    img2.src = "./img/banner-lateral-3.png";
+function mudaCor() {
+    let r = Math.ceil(Math.random()*255);
+    let g = Math.ceil(Math.random()*255);
+    let b = Math.ceil(Math.random()*255);
     
-    setTimeout(mudarimg2, 1000);
+    const elemento = [...document.getElementsByClassName("conteudo")];
+    elemento.forEach( (el)=>{
+        el.style.backgroundColor = `rgb(${r},${g},${b})`;
+    } )
+
+   tmp = setTimeout(mudaCor, 1000);
+
 }
 
-function mudarimg2() {                      
-    // let nr = Math.round(Math.random()*3);
-    const img1 = document.querySelector(".l-d img");
-    const img2 = document.querySelector(".l-e img");
+function alteraBanner1() {
+    
+    // let nr = Math.ceil(Math.random() *3);
+    const img1 = document.querySelector(".l-d > img");
+    const img2 = document.querySelector(".l-e > img");
+    img1.src = "./img/banner-lateral-1.png";
+    img2.src = "./img/banner-lateral-2.png";
 
+    setTimeout(alteraBanner2, 1000);
+
+}
+ 
+function alteraBanner2() {
+    
+    // let nr = Math.ceil(Math.random() *3);
+    const img1 = document.querySelector(".l-d > img");
+    const img2 = document.querySelector(".l-e > img");
     img1.src = "./img/banner-lateral-2.png";
     img2.src = "./img/banner-lateral-1.png";
-    
-    setTimeout(mudarimg3, 1000);
+
+    setTimeout(alteraBanner3, 1000);
+
 }
 
-function mudarimg3() {                      
-    // let nr = Math.round(Math.random()*3);
-    const img1 = document.querySelector(".l-d img");
-    const img2 = document.querySelector(".l-e img");
-
-    img1.src = "./img/banner-lateral-3.png";
+function alteraBanner3() {
+    
+    // let nr = Math.ceil(Math.random() *3);
+    const img1 = document.querySelector(".l-d > img");
+    const img2 = document.querySelector(".l-e > img");
+    img1.src = "./img/banner-lateral-1.png";
     img2.src = "./img/banner-lateral-2.png";
-    
-    setTimeout(mudarimg1, 1000);
+
+    setTimeout(alteraBanner1, 1000);
+
 }
 
-// modo para nao adicionar a funcao onclick no html
-const btnluzoff = document.querySelector(".conteudo button");
+alteraBanner1();
 
-btnluzoff.addEventListener("click", ()=>{
-    const luzoff = document.querySelector(".conteudo > div > img");
+const btnOnOff = document.querySelector(".conteudo button");
 
-    if(btnluzoff.textContent == "LIGAR"){
-        btnluzoff.textContent = "DESLIGAR";
-        luzoff.src= "./img/pic_bulbon.gif";
+btnOnOff.addEventListener("click", ()=>{
+    const imgLampada = document.querySelector(".conteudo img");
+    if(btnOnOff.textContent == "LIGAR"){
+        btnOnOff.textContent = "DESLIGAR";
+        imgLampada.src = "./img/pic_bulbon.gif";
     }else{
-        btnluzoff.textContent = "LIGAR";
-        luzoff.src= "./img/pic_bulboff.gif";
+        btnOnOff.textContent = "LIGAR";
+        imgLampada.src = "./img/pic_bulboff.gif";
     }
-
 });
 
+// function turnInOff() {
+//     const btnOnOff = document.querySelector(".conteudo button");
 
-
-
-
-// function mudacor() {
-//     let r = Math.ceil(Math.random()*255);
-//     let g = Math.ceil(Math.random()*255);
-//     let b = Math.ceil(Math.random()*255);
-
-//     const elemento = [...document.getElementsByClassName("conteudo")];
-//     elemento.forEach( (el)=>{
-//         el.style.backgroundColor = `rgb(${r},${g},${b})`;
-//     } )
-//     tmp = setTimeout(mudacor, 500)
+//     if(btnOnOff.textContent == "LIGAR"){
+//         btnOnOff.textContent = "DESLIGAR";
+//         imgLampada.src = "./img/pic_bulbon.gif";
+//     }else{
+//         btnOnOff.textContent = "LIGAR";
+//         imgLampada.src = "./img/pic_bulboff.gif";
+//     }
 // }
 

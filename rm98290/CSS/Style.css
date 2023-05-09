@@ -10,20 +10,22 @@
 
 .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     width: 100%;
-    height: alto;
+    height: auto;
 }
 
 .conteudo{
     flex-grow: 5;
-    background-color: violet;
+    background-color: blueviolet;
 }
 .l-e{
     flex-grow: 1;
-    background-color:cyan;
+    background-color:coral;
 }
 .l-d{
     flex-grow: 1;
-    background-color: aliceblue;
+    background-color: crimson;
 }
+
+
